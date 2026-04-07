@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--
+  ======================================================
+  PROYECTO: COMPUNET_WEB
+  ARCHIVO : index.html
+  OBJETIVO: Página principal de COMPUNET
+  NOTA    : El código está comentado paso a paso para que
+            entiendas qué hace cada bloque.
+  ======================================================
+-->
+<html lang="es">
+<head>
+  <!-- Define la codificación de caracteres para soportar acentos y ñ -->
+  <meta charset="utf-8" />
+
+  <!-- Hace que la página se adapte correctamente en celulares y tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Título que aparece en la pestaña del navegador -->
+  <title>COMPUNET | Reparación y Mantenimiento de Impresoras</title>
+
+  <!-- Descripción para buscadores -->
+  <meta name="description" content="COMPUNET ofrece reparación y mantenimiento de impresoras, venta de equipos disponibles y cotización rápida por WhatsApp." />
+
+  <!-- Palabras clave básicas para SEO -->
+  <meta name="keywords" content="COMPUNET, reparación de impresoras, mantenimiento de impresoras, impresoras HP, Konica Minolta, cotización WhatsApp" />
+
+  <!-- Etiquetas Open Graph: ayudan a que la página se vea mejor cuando se comparte -->
+  <meta property="og:title" content="COMPUNET | Reparación y Mantenimiento de Impresoras" />
+  <meta property="og:description" content="Servicio técnico profesional de impresoras y multifuncionales. Cotiza fácil por WhatsApp." />
+  <meta property="og:image" content="assets/catalogo/catalogo_img_01.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon: icono que aparece en la pestaña del navegador -->
+  <!-- Si todavía no tienes este archivo, puedes dejar esta línea o quitarla temporalmente -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo/compunet_logo4_printer.svg" />
+
+  <!-- Conexión anticipada para cargar más rápido Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fuente tipográfica -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS desde CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Configuración personalizada de Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          /* Fuente principal */
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui']
+          },
+          /* Colores de la marca */
+          colors: {
+            brand: {
+              DEFAULT: '#111827',
+              light: '#1f2937',
+              accent: '#06b6d4'
+            }
+          },
+          /* Sombra suave reutilizable */
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  
+  
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- ================================================== -->
+  <!-- ENCABEZADO / MENÚ SUPERIOR -->
+  <!-- ================================================== -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+
+      <!-- Logo / nombre de la empresa -->
+      <a href="#" class="flex items-center gap-3" aria-label="COMPUNET">
+        <!--
+          Aquí el logo va incrustado como SVG.
+          Ventaja: se ve nítido y no depende de un archivo externo.
+        -->
+        <svg viewBox="0 0 750 180" class="h-20 w-auto" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="50" width="100" height="60" rx="8" ry="8" fill="#111111"/>
+          <rect x="25" y="30" width="70" height="25" fill="#00C3E3"/>
+          <rect x="25" y="80" width="70" height="15" fill="white"/>
+          <text x="140" y="105" font-family="Arial, Helvetica, sans-serif" font-size="80" font-weight="bold">
+            <tspan fill="#111111">COMPU</tspan><tspan fill="#00C3E3">NET</tspan>
+          </text>
+        </svg>
+      </a>
+
+      <!-- Menú de navegación -->
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#servicios" class="hover:text-cyan-600">Servicios</a>
+        <a href="#catalogo" class="hover:text-cyan-600">Catálogo</a>
+        <a href="#contacto" class="hover:text-cyan-600">Contacto</a>
+        <a href="#cotizar" class="hover:text-cyan-600">Cotizar</a>
+      </nav>
+
+      <!-- Botón de WhatsApp -->
+      <a href="https://wa.me/525569680060?text=Hola%20COMPUNET%2C%20quiero%20cotizar%20el%20servicio%20de%20reparaci%C3%B3n%20de%20impresora"
+         target="_blank"
+         class="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-3 py-2 text-white text-sm font-semibold shadow-soft hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 md:px-4 -translate-y-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.52 3.48A11.94 11.94 0 0012.06 0C5.55 0 .33 5.22.33 11.73c0 2.06.54 4.05 1.57 5.81L0 24l6.61-1.74a11.73 11.73 0 005.45 1.38h.01c6.51 0 11.73-5.22 11.73-11.73 0-3.14-1.22-6.09-3.28-8.15zM12.07 21.3h-.01a9.62 9.62 0 01-4.91-1.34l-.35-.2-3.92 1.03 1.05-3.82-.23-.39a9.58 9.58 0 01-1.46-5.14c0-5.3 4.31-9.61 9.61-9.61 2.57 0 4.98 1 6.79 2.81a9.54 9.54 0 012.82 6.79c0 5.3-4.31 9.62-9.61 9.62zm5.54-7.2c-.3-.15-1.78-.88-2.06-.98-.28-.1-.49-.15-.7.15-.2.3-.8.98-.98 1.18-.18.2-.36.22-.66.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.74-1.65-2.04-.18-.3-.02-.47.13-.62.13-.12.3-.32.45-.48.15-.16.2-.27.3-.46.1-.2.05-.37-.02-.52-.07-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.46 1.06 2.88 1.2 3.08.15.2 2.08 3.18 5.03 4.46.7.3 1.25.48 1.68.62.7.22 1.33.19 1.83.11.56-.08 1.78-.73 2.03-1.44.25-.7.25-1.3.18-1.44-.07-.15-.25-.22-.55-.37z"/>
+        </svg>
+        <span class="hidden md:inline">WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================================================== -->
+  <!-- SECCIÓN PRINCIPAL / HERO -->
+  <!-- ================================================== -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
+
+      <!-- Texto principal -->
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-gray-900">
+          Reparación y mantenimiento
+          <span class="text-cyan-600">profesional</span>
+          de impresoras
+        </h1>
+
+        <p class="mt-4 text-lg text-gray-600">
+          En <strong>COMPUNET</strong> te ayudamos a reducir tiempos muertos y costos con servicio técnico experto, mantenimiento preventivo y correctivo, venta de equipos y cotizaciones rápidas.
+        </p>
+
+        <!-- Botones -->
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#cotizar" class="glow inline-flex items-center justify-center rounded-xl bg-cyan-500 px-6 py-3 text-white font-semibold shadow-soft hover:bg-cyan-600">
+            Solicitar cotización
+          </a>
+          <a href="#catalogo" class="inline-flex items-center justify-center rounded-xl border border-gray-300 px-6 py-3 font-semibold text-gray-700 hover:border-cyan-400">
+            Ver catálogo
+          </a>
+        </div>
+
+        <!-- Beneficios -->
+        <ul class="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="h-2 w-2 bg-cyan-500 rounded-full"></span> Diagnóstico y reparación</li>
+          <li class="flex items-center gap-2"><span class="h-2 w-2 bg-cyan-500 rounded-full"></span> Mantenimiento preventivo y correctivo</li>
+          <li class="flex items-center gap-2"><span class="h-2 w-2 bg-cyan-500 rounded-full"></span> Venta de equipos</li>
+          <li class="flex items-center gap-2"><span class="h-2 w-2 bg-cyan-500 rounded-full"></span> Atención a empresas y particulares</li>
+        </ul>
+      </div>
+
+      <!-- Imagen principal -->
+      <div class="relative flex items-center justify-center">
+        <div class="absolute inset-0 bg-cyan-100/30 blur-3x1 rounded-full scale-110"></div>
+        <img src="assets/hero/hero_compunet1.png"
+             alt="Imagenprincipal de COMPUNET"
+             class="relative w-full max-w-2x1 h-auto object-contain" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- SERVICIOS -->
+  <!-- ================================================== -->
+  <section id="servicios" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">Servicios</h2>
+      <p class="mt-2 text-gray-600">Atendemos equipos HP, Konica Minolta y otras marcas bajo diagnóstico técnico y cotización previa.</p>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100">
+          <h3 class="font-semibold text-xl">Reparación de impresoras</h3>
+          <p class="mt-2 text-gray-600">Diagnóstico, corrección de fallas, cambio de refacciones, errores de impresión, atascos y problemas de calidad.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100">
+          <h3 class="font-semibold text-xl">Mantenimiento preventivo</h3>
+          <p class="mt-2 text-gray-600">Limpieza profunda, revisión de consumibles, calibración y servicio para prolongar la vida útil del equipo.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100">
+          <h3 class="font-semibold text-xl">Cotizaciones de reparación</h3>
+          <p class="mt-2 text-gray-600">Evaluación rápida del equipo y presupuesto claro para reparación, mantenimiento o suministro.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100">
+          <h3 class="font-semibold text-xl">Venta de impresoras</h3>
+          <p class="mt-2 text-gray-600">Equipos disponibles con características destacadas para oficina, negocio y alto volumen de trabajo.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100">
+          <h3 class="font-semibold text-xl">Asesoría técnica</h3>
+          <p class="mt-2 text-gray-600">Te ayudamos a elegir el modelo correcto según velocidad, volumen de impresión y tipo de operación.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100">
+          <h3 class="font-semibold text-xl">Atención por WhatsApp</h3>
+          <p class="mt-2 text-gray-600">Contáctanos de forma directa para solicitar información, cotizar equipos o pedir soporte técnico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- CATÁLOGO -->
+  <!-- ================================================== -->
+  <section id="catalogo" class="py-16 bg-white border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Encabezado del catálogo -->
+      <div class="flex items-end justify-between gap-4 flex-wrap">
+        <div>
+          <h2 class="text-3xl font-bold">Catálogo</h2>
+          <p class="mt-2 text-gray-600">Modelos disponibles con una breve descripción de sus características más sobresalientes.</p>
+        </div>
+
+        <!-- Buscador y filtro -->
+        <div class="flex gap-3 text-sm flex-wrap">
+          <input id="search"
+                 type="search"
+                 placeholder="Buscar (modelo, marca, tipo)"
+                 class="w-64 rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+
+          <select id="filter" class="rounded-xl border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <option value="">Todas las categorías</option>
+            <option value="impresoras">Impresoras</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Contenedor de tarjetas -->
+      <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+      <!-- Plantilla de tarjeta -->
+      <template id="card-template">
+        <div class="group rounded-2xl bg-gray-50 border border-gray-200 hover:border-cyan-300 p-4 shadow-soft transition">
+          <div class="aspect-[4/3] overflow-hidden rounded-xl bg-white">
+            <img class="w-full h-full object-cover" alt="Producto" />
+          </div>
+
+          <div class="mt-4 flex items-start justify-between gap-2">
+            <div>
+              <h3 class="font-semibold text-lg name"></h3>
+              <p class="text-sm text-gray-600 brand"></p>
+              <p class="mt-1 text-sm text-gray-500 sku"></p>
+            </div>
+            <span class="px-3 py-1 rounded-lg text-xs font-semibold bg-cyan-100 text-cyan-700 category"></span>
+          </div>
+
+          <p class="mt-2 text-sm text-gray-600 desc"></p>
+
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-lg font-bold price"></span>
+            <button class="px-4 py-2 rounded-xl bg-cyan-500 text-white text-sm font-semibold hover:bg-cyan-600" data-action="cotizar">
+              Cotizar
+            </button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- FORMULARIO DE COTIZACIÓN Y CONTACTO -->
+  <!-- ================================================== -->
+  <section id="cotizar" class="py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center">Solicita tu cotización</h2>
+      <p class="mt-2 text-gray-600 text-center">Cuéntanos el modelo o la falla de tu equipo y te respondemos por WhatsApp.</p>
+
+      <!-- Formulario -->
+      <form id="quoteForm" class="mt-8 grid gap-4 bg-white p-6 rounded-2xl shadow-soft border border-gray-100">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm font-medium">Nombre</label>
+            <input name="nombre" required class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+          </div>
+
+          <div>
+            <label class="text-sm font-medium">Correo</label>
+            <input name="correo" type="email" required class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm font-medium">Teléfono / WhatsApp</label>
+            <input name="telefono" class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" />
+          </div>
+
+          <div>
+            <label class="text-sm font-medium">Servicio</label>
+            <select name="servicio" class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+              <option>Reparación</option>
+              <option>Mantenimiento</option>
+              <option>Cotización de equipo</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-sm font-medium">Mensaje</label>
+          <textarea name="mensaje" rows="5" class="mt-1 w-full rounded-xl border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400" placeholder="Escribe el modelo del equipo o describe la falla..."></textarea>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+          <label class="inline-flex items-center gap-2 text-sm">
+            <input type="checkbox" required class="rounded border-gray-300"/>
+            Acepto el aviso de privacidad
+          </label>
+
+          <button class="px-6 py-3 rounded-xl bg-cyan-500 text-white font-semibold hover:bg-cyan-600">
+            Enviar
+          </button>
+        </div>
+
+        <!-- Mensaje de estado -->
+        <p id="formStatus" class="text-sm"></p>
+      </form>
+
+      <!-- Tarjetas de contacto -->
+      <div id="contacto" class="mt-10 grid sm:grid-cols-3 gap-6 text-center">
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100 flex flex-col justify-center items-center text-center min-h-[140px]">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Teléfono</p>
+          <p class="mt-1 font-semibold">55 6968 0060</p>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100 flex flex-col justify-center items-center text-center min-h-[140px]">
+          <p class="text-xs uppercase tracking-widest text-gray-500">WhatsApp</p>
+          <p class="mt-1 font-semibold">+52 55 6968 0060</p>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-soft border border-gray-100 flex flex-col justify-center items-center text-center min-h-[140px]">
+          <p class="text-xs uppercase tracking-widest text-gray-500">Correo</p>
+          <p class="mt-2 font-semibold break-words">compu.nett18@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- FOOTER -->
+  <!-- ================================================== -->
+  <footer class="py-10 bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2">
+        <svg viewBox="0 0 750 180" class="h-10 w-auto" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="50" width="100" height="60" rx="8" ry="8" fill="#ffffff"/>
+          <rect x="25" y="30" width="70" height="25" fill="#00C3E3"/>
+          <rect x="25" y="80" width="70" height="15" fill="black"/>
+          <text x="140" y="105" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="bold">
+            <tspan fill="#ffffff">COMPU</tspan><tspan fill="#00C3E3">NET</tspan>
+          </text>
+        </svg>
+        <span class="text-sm">© <span id="year"></span> COMPUNET</span>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 text-sm items-center">
+        <a href="mailto:compu.nett18@gmail.com" class="hover:text-white">compu.nett18@gmail.com</a>
+        <span class="hidden sm:inline">|</span>
+        <a href="tel:+525569680060" class="hover:text-white">+52 55 6968 0060</a>
+        <span class="hidden sm:inline">|</span>
+        <a href="#aviso" class="hover:text-white">Aviso de privacidad</a>
+        <span class="hidden sm:inline">|</span>
+        <a href="#terminos" class="hover:text-white">Términos y condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================== -->
+  <!-- AVISO DE PRIVACIDAD -->
+  <!-- ================================================== -->
+  <section id="aviso" class="py-16 bg-gray-50 text-gray-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-4">Aviso de Privacidad</h2>
+      <p class="text-sm leading-relaxed">
+        En COMPUNET nos comprometemos a proteger sus datos personales. La información recabada será utilizada únicamente para fines de contacto, cotizaciones y prestación de servicios de mantenimiento y reparación de impresoras. Usted puede ejercer sus derechos ARCO enviando un correo a compu.nett18@gmail.com. Sus datos no serán compartidos con terceros sin su consentimiento expreso.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- TÉRMINOS Y CONDICIONES -->
+  <!-- ================================================== -->
+  <section id="terminos" class="py-16 bg-white text-gray-800 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold mb-4">Términos y Condiciones</h2>
+      <p class="text-sm leading-relaxed">
+        El uso de este sitio web implica la aceptación de los siguientes términos y condiciones: (1) COMPUNET ofrece servicios de reparación, mantenimiento y venta de equipos de impresión. (2) Los precios mostrados en el catálogo pueden variar sin previo aviso. (3) Las cotizaciones tienen una vigencia de 7 días hábiles. (4) Todo servicio está sujeto a revisión técnica previa. (5) Cualquier controversia será resuelta conforme a la legislación mexicana vigente.
+      </p>
+    </div>
+  </section>
+    
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
